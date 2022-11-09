@@ -59,7 +59,7 @@ void loop()
   }
   
   
-  dist_ema = (_EMA_ALPHA * dist) + ((1-_EMA_ALPHA) * dist_prev);
+  dist_ema = (_EMA_ALPHA * dist) + ((1-_EMA_ALPHA) * dist_ema);
   
   duty = (_DUTY_MIN+(_DUTY_MAX-_DUTY_MIN))*((dist_ema-_DIST_MIN)/(_DIST_MAX - _DIST_MIN));
   
